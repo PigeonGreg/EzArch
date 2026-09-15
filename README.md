@@ -1,2 +1,2 @@
 # EzArch
-User-Friendly, Arch base linux distribution
+EzArch is a user-friendly arch based Linux distribution.
