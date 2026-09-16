@@ -1,0 +1,115 @@
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <group name="General">
+        <entry name="playerIdentity" type="String">
+            <label>Player identity</label>
+            <description>MPRIS player identity to display</description>
+            <default>Spotify</default>
+        </entry>
+        <entry name="transparentBackground" type="Bool">
+            <label>Transparent background</label>
+            <description>Use transparent background when plasmoid is on desktop (not in panel)</description>
+            <default>false</default>
+        </entry>
+        <entry name="showLyrics" type="Bool">
+            <label>Show lyrics</label>
+            <default>true</default>
+        </entry>
+        <entry name="highlightCurrentLine" type="Bool">
+            <label>Highlight current line</label>
+            <default>true</default>
+        </entry>
+        <entry name="currentLineOffset" type="Int">
+            <label>Change position of current line (+1 more towards top)</label>
+            <default>0</default>
+            <min>-5</min>
+            <max>5</max>
+        </entry>
+        <entry name="alternativeLineHeightCalculation" type="Bool">
+            <label>Use alternative line height calculation</label>
+            <default>false</default>
+        </entry>
+        <entry name="lyricsFontSize" type="Int">
+            <label>Lyrics Font Size</label>
+            <default>12</default>
+            <min>8</min>
+            <max>72</max>
+        </entry>
+        <entry name="lyricsFontFamily" type="String">
+            <label>Lyrics Font Family</label>
+            <default>Noto Sans</default>
+        </entry>
+        <entry name="useCustomLyricsColor" type="Bool">
+            <label>Use custom lyrics text color</label>
+            <default>false</default>
+        </entry>
+        <entry name="lyricsTextColor" type="String">
+            <label>Lyrics Text Color</label>
+            <default>#ffffff</default>
+        </entry>
+        <entry name="showAlbumCover" type="Bool">
+            <label>Show album cover</label>
+            <default>true</default>
+        </entry>
+        <entry name="fetchAlbumCoverHttps" type="Bool">
+            <label>Fetch album cover from HTTPS sources</label>
+            <default>false</default>
+            <description>Enable this to fetch album covers from HTTPS sources, which is more secure.</description>
+        </entry>
+        <entry name="maxTitleArtistLength" type="Int">
+            <label>Max Title/Artist Length</label>
+            <description>Maximum length of the title and artist to display. Longer titles will be truncated with an
+                ellipsis.
+            </description>
+            <default>64</default>
+            <min>10</min>
+            <max>200</max>
+        </entry>
+        <entry name="showTitle" type="Bool">
+            <label>Show title</label>
+            <default>true</default>
+        </entry>
+        <entry name="titleFontSize" type="Int">
+            <label>Title Font Size</label>
+            <default>14</default>
+            <min>8</min>
+            <max>72</max>
+        </entry>
+        <entry name="titleFontFamily" type="String">
+            <label>Title Font Family</label>
+            <default>Noto Sans</default>
+        </entry>
+        <entry name="useCustomTitleColor" type="Bool">
+            <label>Use custom title text color</label>
+            <default>false</default>
+        </entry>
+        <entry name="titleTextColor" type="String">
+            <label>Title Text Color</label>
+            <default>#ffffff</default>
+        </entry>
+        <entry name="showArtist" type="Bool">
+            <label>Show artist</label>
+            <default>true</default>
+        </entry>
+        <entry name="artistFontSize" type="Int">
+            <label>Artist Font Size</label>
+            <default>12</default>
+            <min>8</min>
+            <max>72</max>
+        </entry>
+        <entry name="artistFontFamily" type="String">
+            <label>Artist Font Family</label>
+            <default>Noto Sans</default>
+        </entry>
+        <entry name="useCustomArtistColor" type="Bool">
+            <label>Use custom artist text color</label>
+            <default>false</default>
+        </entry>
+        <entry name="artistTextColor" type="String">
+            <label>Artist Text Color</label>
+            <default>#ffffff</default>
+        </entry>
+    </group>
+</kcfg>

@@ -1,0 +1,22 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-Plasma-API": "declarativeappletscript",
+  "X-Plasma-MainScript": "ui/main.qml",
+  "KPlugin": {
+    "Icon": "view-media-track",
+    "Id": "spotify",
+    "Name": "Spotify",
+    "Version": "1.2.2",
+    "Category": "Multimedia",
+    "Authors": [
+      {
+        "Name": "LabyStudio"
+      }
+    ]
+  },
+  "X-Plasma-Provides": [
+    "org.kde.plasma.multimediacontrols"
+  ]
+}
+

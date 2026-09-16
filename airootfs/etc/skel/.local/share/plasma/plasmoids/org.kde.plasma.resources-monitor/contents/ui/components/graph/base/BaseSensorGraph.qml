@@ -1,0 +1,143 @@
+import QtQuick
+import org.kde.plasma.plasmoid
+import org.kde.ksysguard.sensors as Sensors
+import org.kde.ksysguard.formatter as Formatter
+import org.kde.kirigami as Kirigami
+import "../../" as RMComponents
+import "../../../code/formatter.js" as RMFormatter
+
+Item {
+    id: root
+
+    // Aliases
+    readonly property alias textContainer: textContainer
+    readonly property alias sensorsModel: sensorsModel
+
+    // Graph properties
+    property var colors: [undefined, undefined, undefined] // Common graph settings
+    property var sensorsType: [] // Present because is graph settings
+    property int fontSize: -1 // Present because is graph settings | See "textContainer.fontSize"
+
+    // Thresholds properties
+    property var thresholds: [] // ONLY USED FOR CONFIG (graph settings)! | See "textContainer.thresholds"
+
+    // Minimum width of widget
+    required property var sensorsFormat
+    readonly property int minimumWidth: {
+        if (!textContainer.enabled) {
+            return 0;
+        }
+
+        let maxLength = 0;
+        for (const index in sensorsType) {
+            if (sensorsFormat[index] && sensorsType[index] != "none") {
+                const length = Formatter.Formatter.maximumLength(sensorsFormat[index], textContainer.font);
+                if (length > maxLength) {
+                    maxLength = length;
+                }
+            }
+        }
+        return maxLength;
+    }
+
+    // Labels
+    RMComponents.TextContainer {
+        id: textContainer
+        enabled: Plasmoid.configuration.displayment != 'never'
+        z: 1
+        hintColors: root.colors
+        fontSize: root.fontSize
+    }
+
+    // Retrieve data from sensors, and update labels
+    property var sensorSlots: []
+    Sensors.SensorDataModel {
+        id: sensorsModel
+        updateRateLimit: -1
+
+        // Sensors (handle multiple same sensor)
+        sensors: {
+            const unique = [];
+            for (const sensor of root.sensorSlots) {
+                if (sensor !== null && !unique.includes(sensor)) {
+                    unique.push(sensor);
+                }
+            }
+            return unique;
+        }
+        property var sensorIndexMap: root.sensorSlots.map(sensor => sensor === null ? -1 : sensors.indexOf(sensor))
+
+        /**
+         * Get the value and sensor ID from sensor
+         * @param {number} column The sensors index
+         * @returns The data value, formatted value and sensor id
+         */
+        function getValue(column) {
+            if (!hasIndex(0, column)) {
+                return undefined;
+            }
+            const indexVar = index(0, column);
+            return {
+                "sensorId": data(indexVar, Sensors.SensorDataModel.SensorId),
+                "value": data(indexVar, Sensors.SensorDataModel.Value)
+            };
+        }
+
+        /**
+         * Get data from sensor
+         * @param {number} column The sensor index
+         * @param {number} role The role id
+         * @returns The sensor data
+         */
+        function getData(column, role = Sensors.SensorDataModel.Value) {
+            if (!hasIndex(0, column)) {
+                return undefined;
+            }
+            return data(index(0, column), role);
+        }
+    }
+
+    // Process functions
+    property var _insertChartData: (column, value) => {} // NOTE: this is implemented by children
+
+    property var _update: _defaultUpdate
+    function _defaultUpdate() {
+        for (let i = 0; i < sensorsModel.sensorIndexMap.length; i++) {
+            const value = sensorsModel.getData(sensorsModel.sensorIndexMap[i]);
+            // Skip not founded sensor
+            if (typeof value === 'undefined') {
+                continue;
+            }
+            root._insertChartData(i, value);
+
+            // Update label
+            if (textContainer.enabled) {
+                textContainer.setValue(i, value, _formatValue(i, value));
+            }
+        }
+    }
+
+    property var _formatValue: _defaultFormatValue
+    function _defaultFormatValue(index, value) {
+        const unit = sensorsModel.getData(sensorsModel.sensorIndexMap[index], Sensors.SensorDataModel.Unit);
+        if (Plasmoid.configuration.abbreviate) {
+            return RMFormatter.formatInAbbreviate(value, unit, Qt.locale());
+        } else {
+            return Formatter.Formatter.formatValueShowNull(value, unit);
+        }
+    }
+
+    /**
+     * Resolve color when is name based
+     * @param {string} color The color value
+     * @returns The color color
+     */
+    function _resolveColor(color) {
+        if (!color) {
+            return Kirigami.Theme.textColor;
+        } else if (color.startsWith("#")) {
+            return color;
+        }
+        return Kirigami.Theme[color] ?? Kirigami.Theme.textColor;
+    }
+}

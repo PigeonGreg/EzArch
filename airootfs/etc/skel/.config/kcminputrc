@@ -1,0 +1,5 @@
+[Libinput][12625][24577][YICHIP Wireless Receiver Mouse]
+LeftHanded=false
+
+[Mouse]
+X11LibInputXAccelProfileFlat=true

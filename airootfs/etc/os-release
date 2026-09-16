@@ -1,0 +1,9 @@
+NAME="EzArch"
+PRETTY_NAME="EzArch Linux"
+ID=ezarch
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://example.com/"
+DOCUMENTATION_URL="https://wiki.archlinux.org/"
+LOGO=archlinux-logo

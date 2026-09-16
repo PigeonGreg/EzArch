@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <kcfgfile name="" />
+
+    <group name="General">
+        <entry name="graphs" type="String">
+            <label>Graphs order and settings in JSON format</label>
+            <default>[{"_v":4,"type":"cpu","sizes":[-1,-1],"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","classic",false],"clockAggregator":"average","eCoresCount":0,"thresholds":[85,105],"fontSize":-1},{"_v":4,"type":"memory","sizes":[-1,-1],"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical","swap"],"thresholds":[70,90],"fontSize":-1}]</default>
+        </entry>
+
+        <entry name="updateInterval" type="Double">
+            <default>1.0</default>
+        </entry>
+
+        <entry name="clickApplication" type="String">
+            <default>file:///usr/share/applications/org.kde.plasma-systemmonitor.desktop</default>
+        </entry>
+    </group>
+
+    <group name="Appearance">
+        <entry name="fillPanel" type="Bool">
+            <default>false</default>
+        </entry>
+        <entry name="abbreviate" type="Bool">
+            <default>false</default>
+        </entry>
+
+        <entry name="historyAmount" type="Int">
+            <default>10</default>
+        </entry>
+        <entry name="graphSpacing" type="Int">
+            <default>10</default>
+        </entry>
+        <entry name="graphFillOpacity" type="Int">
+            <default>25</default>
+        </entry>
+
+        <entry name="enableShadows" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="autoFontAndSize" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="fontFamily" type="String">
+            <default></default>
+        </entry>
+        <entry name="boldText" type="Bool">
+            <label>Internal for FontDialog</label>
+            <default>false</default>
+        </entry>
+        <entry name="italicText" type="Bool">
+            <default>false</default>
+        </entry>
+        <entry name="fontWeight" type="Int">
+            <default>50</default>
+        </entry>
+        <entry name="fontStyleName" type="String">
+            <label>Internal for FontDialog</label>
+            <default></default>
+        </entry>
+        <entry name="fontSize" type="Int">
+            <default>10</default>
+        </entry>
+        <entry name="keepFontSize" type="Bool">
+            <default>false</default>
+        </entry>
+        <entry name="displayment" type="String">
+            <default>hover-hints</default>
+        </entry>
+        <entry name="placement" type="String">
+            <default>top-right</default>
+        </entry>
+
+        <entry name="textColor" type="String">
+            <default>textColor</default>
+        </entry>
+        <entry name="warningColor" type="String">
+            <default>neutralTextColor</default>
+        </entry>
+        <entry name="criticalColor" type="String">
+            <default>negativeTextColor</default>
+        </entry>
+    </group>
+
+</kcfg>
