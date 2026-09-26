@@ -33,9 +33,9 @@ After getting archiso you got to copy sources, go to copied directory and run sp
 
 ```bash
 git clone https://github.com/PigeonGreg/EzArch.git
-cd EzArch/releng
+cd EzArch/
 ./build.sh
 ```
-After that build process will start and you will get ISO file in ~/EzArch/releng/out
+After that build process will start and you will get ISO file in ~/EzArch/out
 
 Then simply burn ISO on usb drive(using Rufus for example) or use Ventoy and you are good to go!
