@@ -31,6 +31,9 @@ memtest86+
 memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
+mkinitcpio-nfs-utils
+nbd
+os-prober
 mtools
 nano
 ntfsprogs
@@ -90,9 +93,6 @@ lib32-mesa
 vulkan-radeon
 vulkan-intel
 vulkan-icd-loader
-
-#NVIDIA
-
 xf86-video-nouveau
 
 #Sound
@@ -118,11 +118,16 @@ haruna
 okular
 ark
 kcalc
+alacritty
 
+calamares
 networkmanager
 gparted
 gvfs
 gvfs-smb
 xdg-user-dirs
+kpmcore
+ntfs-3g
 
-
+#AUR
+yay

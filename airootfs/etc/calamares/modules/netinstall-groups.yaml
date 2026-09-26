@@ -1,0 +1,54 @@
+---
+- name: "Office"
+  description: "Office utils(libre office, microsoft office but for linux)"
+  selected: false
+  hidden: false
+  packages: [ "libreoffice-fresh" ]
+
+- name: "NVIDIA"
+  description: "Select if you have NVIDIA GPU"
+  selected: false
+  hidden: false
+  packages: [ "nvidia-dkms", "nvidia-utils", "linux-headers", "base-devel", "lib32-nvidia-utils" ]
+
+- name: "Gaming"
+  description: "Some basic gaming packages for linux!"
+  selected: false
+  hidden: false
+  packages: [ "steam", "lutris", "goverlay", "protonplus", "gamemode", "mangohud", "bottles", "wine-staging", "winetricks", "lib32-gamemode", "lib32-mangohud" ]
+
+- name: "Drivers"
+  description: "Keep those selected unless you know what you are doing"
+  selected: true
+  hidden: false
+  packages: [ "giflib", "lib32-giflib", "lib32-gnutls", "lib32-vulkan-icd-loader", "lib32-mesa", "vkd3d", "vulkan-tools", "lib32-vkd3d", "rocm-opencl-runtime" ]
+
+- name: "Messengers"
+  description: "idk what to say, messengers"
+  selected: false
+  hidden: false
+  packages: [ "discord", "telegram-desktop" ]
+
+- name: "Emulation"
+  description: "Virtual machines, son!"
+  selected: false
+  hidden: false
+  packages: [ "virtualbox", "virtualbox-guest-iso", "waydroid" ]
+
+- name: "Development"
+  description: "Code editors and IDEs"
+  selected: false
+  hidden: false
+  packages: [ "code", "zed", "intellij-idea-community-edition", "neovim" ]
+
+- name: "Art & Design"
+  description: "Be bold, be original, be [TITLE CARD]"
+  selected: false
+  hidden: false
+  packages: [ "blender", "krita", "gimp", "inkscape" ]
+
+- name: "Larp"
+  description: "Some pretty much useless, but beautiful console utils"
+  selected: false
+  hidden: false
+  packages: [ "sl", "cmatrix", "cava", "lavat", "larp" ]

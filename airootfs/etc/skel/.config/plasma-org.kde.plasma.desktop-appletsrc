@@ -38,7 +38,7 @@ ToolBoxButtonX=462
 ToolBoxButtonY=32
 
 [Containments][105][Wallpaper][org.kde.image][General]
-Image=file:///home/liveuser/Pictures/wallpaper/ezarch_wallpaper.png
+Image=file:///usr/share/wallpapers/ezarch_wallpaper.png
 SlidePaths=/home/greg/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][107]

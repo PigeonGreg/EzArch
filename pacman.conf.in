@@ -98,4 +98,4 @@ Include = /etc/pacman.d/mirrorlist
 
 [customrepo]
 SigLevel = Optional TrustAll
-Server = file:///home/greg/EzArch/releng/airootfs/var/cache/customrepo
+Server = file://@PROFILEDIR@/airootfs/var/cache/customrepo

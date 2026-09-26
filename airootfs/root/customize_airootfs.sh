@@ -6,7 +6,7 @@ useradd -m -G wheel,audio,video,storage,optical,network,power,input,render -s /b
 passwd -d liveuser
 
 mkdir -p /etc/sudoers.d
-echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/liveuser-nopasswd
+echo "liveuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/liveuser-nopasswd
 chmod 0440 /etc/sudoers.d/liveuser-nopasswd
 
 systemctl enable sddm.service

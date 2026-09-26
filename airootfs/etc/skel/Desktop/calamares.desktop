@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Install EzArch
+Comment=Run EzArch Installer
+Icon=calamares
+Exec=pkexec calamares
+Terminal=false
+Categories=System;

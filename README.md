@@ -1,2 +1,5 @@
-# EzArch
-EzArch is a user-friendly arch based Linux distribution.
+# EzArch Linux
+EzArch is an Arch based Linux distribution that targets lightweight and user-friendliness.
+
+![Live User](readmestuff/liveuser.png)
+
