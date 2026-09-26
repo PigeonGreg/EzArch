@@ -6,6 +6,15 @@ EzArch has a live user with install option inside! That means you can try distro
 
 ![Live User](readmestuff/liveuser.png)
 
+# Requirements
+
+I've tested EzArch on really old laptop with 1 core CPU and 2 GB of RAM, it was really laggy but it worked fine, i think minimal requirements are:
+1 GB of RAM
+20-30 GB HDD/SSD
+
+P.S: Maybe later i'll make XFCE option in installer
+
+
 # Installer
 
 Graphical installer includes some packages that you might want to be installed in your system:
